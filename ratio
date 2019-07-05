@@ -1,0 +1,8 @@
+import math
+from mpmath import *
+
+print("****** Relación velocidad max y promedio en canales rectangulares ******")
+alto= int(input("-¿Cual es el alto?\n" ))
+ancho= int(input("¿Cual es el ancho?\n" ))
+ratio = (math.pi/(2*((math.pi**4)/96)-(((2*alto)/(math.pi*ancho))*(nsum(lambda x: (1/x**5)*math.tanh((x*math.pi*ancho)/(2*alto)), [1, inf])-(1/2**5)*nsum(lambda x: math.tanh((x*math.pi*ancho)/(alto)), [1, inf])))))*((math.pi**3)/32)
+print("Vmax=", ratio, "* Vave.")
